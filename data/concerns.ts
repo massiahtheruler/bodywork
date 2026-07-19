@@ -1,0 +1,46 @@
+export const treatmentConcerns = [
+  "Relaxation",
+  "Stress",
+  "Neck and shoulder tension",
+  "Lower back discomfort",
+  "Headaches",
+  "TMJ or jaw tension",
+  "Sports recovery",
+  "Mobility and flexibility",
+  "Pregnancy discomfort",
+  "Swelling or fluid retention",
+  "Post-procedure support",
+  "Tendinitis or repetitive strain",
+  "Plantar fasciitis or foot discomfort",
+  "Facial tension or puffiness",
+  "Not sure",
+  "Other",
+] as const;
+
+export const bodyAreas = [
+  "Head / jaw",
+  "Neck",
+  "Shoulders",
+  "Upper back",
+  "Lower back",
+  "Arms / elbows",
+  "Hands / wrists",
+  "Hips",
+  "Legs",
+  "Knees",
+  "Feet / ankles",
+  "Full body",
+  "Other",
+] as const;
+
+export const intentTiles = [
+  "Relaxation",
+  "Neck and shoulder tension",
+  "Back discomfort",
+  "Sports recovery",
+  "Pregnancy support",
+  "Swelling and lymphatic support",
+  "Flexibility and mobility",
+  "Head or jaw tension",
+  "Not sure",
+] as const;

@@ -1,0 +1,21 @@
+export const brand = {
+  name: "Miami Bodywork Network",
+  legalName: "Miami Bodywork Network",
+  tagline: "Find the right bodywork for what your body needs.",
+  phone: "(305) 555-0147",
+  email: "hello@miamibodyworknetwork.com",
+  serviceArea: "Miami, Florida",
+  baseUrl: "https://miamibodyworknetwork.com",
+  logoText: "Miami Bodywork Network",
+  disclosure:
+    "Services are performed by participating independent licensed practitioners. Provider availability, pricing and service areas may vary.",
+  colors: {
+    bone: "#F4EFE6",
+    limestone: "#DED3C2",
+    sand: "#C9B79F",
+    clay: "#A77F66",
+    sage: "#7C816E",
+    charcoalOlive: "#292D27",
+    candle: "#D89A55",
+  },
+} as const;

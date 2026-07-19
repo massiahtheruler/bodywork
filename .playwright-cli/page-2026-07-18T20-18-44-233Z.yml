@@ -1,0 +1,295 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: Miami, FL service area
+        - link "(305) 555-0147" [ref=e7] [cursor=pointer]:
+          - /url: tel:(305) 555-0147
+      - navigation "Main navigation" [ref=e10]:
+        - link "Miami Bodywork Network" [ref=e11] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e12]:
+          - link "Services" [ref=e13] [cursor=pointer]:
+            - /url: /services
+          - link "Find My Treatment" [ref=e14] [cursor=pointer]:
+            - /url: /match
+          - link "How It Works" [ref=e15] [cursor=pointer]:
+            - /url: /how-it-works
+          - link "Service Areas" [ref=e16] [cursor=pointer]:
+            - /url: /locations/pinecrest
+          - link "About the Network" [ref=e17] [cursor=pointer]:
+            - /url: /provider-disclosure
+          - link "Book Now" [ref=e18] [cursor=pointer]:
+            - /url: /match
+    - main [ref=e20]:
+      - generic [ref=e22]:
+        - generic [ref=e23]:
+          - paragraph [ref=e24]: Miami bodywork matching
+          - heading "Find the Right Bodywork for What Your Body Needs." [level=1] [ref=e28]
+          - paragraph [ref=e29]: Tell us what you are experiencing, where you are located and when you are available. We will help connect you with an appropriate licensed provider.
+          - generic [ref=e30]:
+            - link "Find My Best Treatment" [ref=e31] [cursor=pointer]:
+              - /url: /match
+            - link "Browse Services" [ref=e33] [cursor=pointer]:
+              - /url: /services
+        - generic [ref=e35]:
+          - img "Calm massage treatment detail with warm linen and natural light" [ref=e37]
+          - generic [ref=e38]:
+            - img "Hands preparing bodywork oils and towels" [ref=e40]
+            - paragraph [ref=e41]: Editorial media slot
+      - region [ref=e42]:
+        - generic [ref=e43]:
+          - generic [ref=e44]:
+            - paragraph [ref=e45]: Start here
+            - heading "What brings you here today?" [level=2] [ref=e46]
+            - paragraph [ref=e47]: Choose the closest fit and we will carry that context into the guided matching flow.
+          - generic [ref=e49]:
+            - button "Relaxation" [ref=e50]
+            - button "Neck and shoulder tension" [ref=e51]
+            - button "Back discomfort" [ref=e52]
+            - button "Sports recovery" [ref=e53]
+            - button "Pregnancy support" [ref=e54]
+            - button "Swelling and lymphatic support" [ref=e55]
+            - button "Flexibility and mobility" [ref=e56]
+            - button "Head or jaw tension" [ref=e57]
+            - button "Not sure" [ref=e58]
+      - region [ref=e59]:
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]:
+              - paragraph [ref=e63]: Popular services
+              - heading "Browse the familiar paths." [level=2] [ref=e64]
+              - paragraph [ref=e65]: For visitors who already know what they want, these services can be selected directly.
+            - link "View all services" [ref=e66] [cursor=pointer]:
+              - /url: /services
+          - generic [ref=e68]:
+            - article [ref=e69]:
+              - img "Licensed bodywork provider preparing a calm treatment room" [ref=e71]
+              - generic [ref=e72]:
+                - generic [ref=e73]:
+                  - paragraph [ref=e74]: 60 / 75 / 90 min · Starting price TBD
+                  - heading "Relaxation / Swedish Massage" [level=3] [ref=e75]
+                  - paragraph [ref=e76]: A gentle, restorative session for stress relief and whole-body ease.
+                - generic [ref=e77]: "Best for: Relaxation, Stress, Not sure"
+                - generic [ref=e78]:
+                  - link "Learn more" [ref=e79] [cursor=pointer]:
+                    - /url: /services/relaxation-swedish-massage-miami
+                  - link "Select this treatment" [ref=e82] [cursor=pointer]:
+                    - /url: /match?service=swedish
+            - article [ref=e84]:
+              - img "Licensed bodywork provider preparing a calm treatment room" [ref=e86]
+              - generic [ref=e87]:
+                - generic [ref=e88]:
+                  - paragraph [ref=e89]: 60 / 75 / 90 min · Starting price TBD
+                  - heading "Therapeutic Deep Tissue Massage" [level=3] [ref=e90]
+                  - paragraph [ref=e91]: Focused bodywork for persistent tension and firm-pressure preferences.
+                - generic [ref=e92]: "Best for: Neck and shoulder tension, Lower back discomfort, Tendinitis or repetitive strain"
+                - generic [ref=e93]:
+                  - link "Learn more" [ref=e94] [cursor=pointer]:
+                    - /url: /services/deep-tissue-massage-miami
+                  - link "Select this treatment" [ref=e97] [cursor=pointer]:
+                    - /url: /match?service=deep-tissue
+            - article [ref=e99]:
+              - img "Licensed bodywork provider preparing a calm treatment room" [ref=e101]
+              - generic [ref=e102]:
+                - generic [ref=e103]:
+                  - paragraph [ref=e104]: 60 / 75 min · Starting price TBD
+                  - heading "Prenatal Massage" [level=3] [ref=e105]
+                  - paragraph [ref=e106]: Supportive massage designed for pregnancy comfort and positioning needs.
+                - generic [ref=e107]: "Best for: Pregnancy discomfort, Stress, Lower back discomfort"
+                - generic [ref=e108]:
+                  - link "Learn more" [ref=e109] [cursor=pointer]:
+                    - /url: /services/prenatal-massage-miami
+                  - link "Select this treatment" [ref=e112] [cursor=pointer]:
+                    - /url: /match?service=prenatal
+            - article [ref=e114]:
+              - img "Licensed bodywork provider preparing a calm treatment room" [ref=e116]
+              - generic [ref=e117]:
+                - generic [ref=e118]:
+                  - paragraph [ref=e119]: 30 / 60 min · Starting price TBD
+                  - heading "Assisted Stretching" [level=3] [ref=e120]
+                  - paragraph [ref=e121]: Guided stretch work commonly chosen for mobility and flexibility goals.
+                - generic [ref=e122]: "Best for: Mobility and flexibility, Sports recovery"
+                - generic [ref=e123]:
+                  - link "Learn more" [ref=e124] [cursor=pointer]:
+                    - /url: /services/assisted-stretching-miami
+                  - link "Select this treatment" [ref=e127] [cursor=pointer]:
+                    - /url: /match?service=assisted-stretching
+            - article [ref=e129]:
+              - img "Licensed bodywork provider preparing a calm treatment room" [ref=e131]
+              - generic [ref=e132]:
+                - generic [ref=e133]:
+                  - paragraph [ref=e134]: 45 / 60 / 75 min · Starting price TBD
+                  - heading "Manual Lymphatic Drainage" [level=3] [ref=e135]
+                  - paragraph [ref=e136]: Gentle technique commonly selected for swelling or post-procedure support review.
+                - generic [ref=e137]: "Best for: Swelling or fluid retention, Post-procedure support"
+                - generic [ref=e138]:
+                  - link "Learn more" [ref=e139] [cursor=pointer]:
+                    - /url: /services/manual-lymphatic-drainage-miami
+                  - link "Select this treatment" [ref=e142] [cursor=pointer]:
+                    - /url: /match?service=lymphatic
+            - article [ref=e144]:
+              - img "Licensed bodywork provider preparing a calm treatment room" [ref=e146]
+              - generic [ref=e147]:
+                - generic [ref=e148]:
+                  - paragraph [ref=e149]: 30 / 60 min · Starting price TBD
+                  - heading "Cupping Therapy" [level=3] [ref=e150]
+                  - paragraph [ref=e151]: A specialty add-on commonly chosen for tight areas and recovery-focused sessions.
+                - generic [ref=e152]: "Best for: Sports recovery, Neck and shoulder tension, Lower back discomfort"
+                - generic [ref=e153]:
+                  - link "Learn more" [ref=e154] [cursor=pointer]:
+                    - /url: /services/cupping-therapy-miami
+                  - link "Select this treatment" [ref=e157] [cursor=pointer]:
+                    - /url: /match?service=cupping
+      - generic [ref=e160]:
+        - generic [ref=e161]:
+          - paragraph [ref=e162]: How matching works
+          - heading "Simple enough for the visitor, structured enough for the business." [level=2] [ref=e163]
+          - paragraph [ref=e164]: The platform collects the details that matter before routing the request.
+        - generic [ref=e165]:
+          - generic [ref=e166]:
+            - paragraph [ref=e167]: "01"
+            - heading "Tell us what you need" [level=3] [ref=e168]
+            - paragraph [ref=e169]: Goals, body areas, pressure, location and timing are collected in one flow.
+          - generic [ref=e170]:
+            - paragraph [ref=e171]: "02"
+            - heading "Review your recommended options" [level=3] [ref=e172]
+            - paragraph [ref=e173]: A small rules engine returns no more than three service options.
+          - generic [ref=e174]:
+            - paragraph [ref=e175]: "03"
+            - heading "Get matched with an available provider" [level=3] [ref=e176]
+            - paragraph [ref=e177]: Availability, service area and suitability notes guide the next booking step.
+      - generic [ref=e178]:
+        - img "Warm bodywork treatment room detail" [ref=e180]
+        - generic [ref=e181]:
+          - paragraph [ref=e182]: Treatment spotlight
+          - heading "Advanced and specialty care, handled with restraint." [level=2] [ref=e183]
+          - generic [ref=e184]:
+            - link [ref=e185] [cursor=pointer]:
+              - /url: /services/reflexology-miami
+              - heading "Reflexology" [level=3] [ref=e186]
+              - paragraph [ref=e187]: Foot-focused bodywork commonly selected for relaxation and foot discomfort.
+              - generic [ref=e188]: Review fit
+            - link [ref=e191] [cursor=pointer]:
+              - /url: /services/red-light-therapy-miami
+              - heading "Red Light Therapy" [level=3] [ref=e192]
+              - paragraph [ref=e193]: A technology-assisted option commonly selected for recovery-oriented support.
+              - generic [ref=e194]: Review fit
+            - link [ref=e197] [cursor=pointer]:
+              - /url: /services/facial-contour-massage-miami
+              - heading "Facial Contour Massage" [level=3] [ref=e198]
+              - paragraph [ref=e199]: Gentle facial massage commonly selected for tension, puffiness and relaxation.
+              - generic [ref=e200]: Review fit
+            - link [ref=e203] [cursor=pointer]:
+              - /url: /services/piezowave-therapy-miami
+              - heading "PiezoWave Therapy" [level=3] [ref=e204]
+              - paragraph [ref=e205]: Specialty technology-assisted recovery support requiring provider review.
+              - generic [ref=e206]: Review fit
+            - link [ref=e209] [cursor=pointer]:
+              - /url: /services/electromagnetic-frequency-therapy-miami
+              - heading "Electromagnetic Frequency Therapy" [level=3] [ref=e210]
+              - paragraph [ref=e211]: A specialty wellness technology option with availability and suitability review.
+              - generic [ref=e212]: Review fit
+            - link [ref=e215] [cursor=pointer]:
+              - /url: /services/tmj-focused-therapy-miami
+              - heading "TMJ-Focused Therapy" [level=3] [ref=e216]
+              - paragraph [ref=e217]: Focused head, jaw and neck work commonly selected for jaw tension.
+              - generic [ref=e218]: Review fit
+      - generic [ref=e222]:
+        - generic [ref=e223]:
+          - paragraph [ref=e224]: Body area
+          - heading "Where are you feeling it?" [level=2] [ref=e225]
+          - paragraph [ref=e226]: An accessible region selector gives visitors a more natural way to describe what they need.
+        - generic [ref=e228]:
+          - generic [ref=e229]:
+            - button "Head / jaw" [ref=e236]
+            - button "Neck" [ref=e237]
+            - button "Shoulders" [ref=e238]
+            - button "Upper back" [ref=e239]
+            - button "Lower back" [ref=e240]
+            - button "Hips" [ref=e241]
+            - button "Legs" [ref=e242]
+            - button "Feet / ankles" [ref=e243]
+          - generic [ref=e244]:
+            - paragraph [ref=e245]: Choose from the visual region map or use the buttons below. Both controls update the same selection.
+            - generic [ref=e246]:
+              - button "Head / jaw" [ref=e247]
+              - button "Neck" [ref=e248]
+              - button "Shoulders" [ref=e249]
+              - button "Upper back" [ref=e250]
+              - button "Lower back" [ref=e251]
+              - button "Arms / elbows" [ref=e252]
+              - button "Hands / wrists" [ref=e253]
+              - button "Hips" [ref=e254]
+              - button "Legs" [ref=e255]
+              - button "Knees" [ref=e256]
+              - button "Feet / ankles" [ref=e257]
+              - button "Full body" [ref=e258]
+      - generic [ref=e260]:
+        - generic [ref=e261]:
+          - paragraph [ref=e262]: The network model
+          - heading "A curated front door for independent providers." [level=2] [ref=e263]
+          - paragraph [ref=e264]: Customers are matched with independent licensed practitioners according to specialty, service area and availability. Services are performed by participating independent practitioners.
+        - generic [ref=e265]:
+          - generic [ref=e266]: Licensure information placeholder
+          - generic [ref=e271]: Certifications placeholder
+          - generic [ref=e276]: Verified reviews placeholder
+          - generic [ref=e281]: Provider screening process placeholder
+          - generic [ref=e286]: Secure request handling placeholder
+      - generic [ref=e292]:
+        - generic [ref=e293]:
+          - paragraph [ref=e294]: FAQ
+          - heading "Questions before you request a match." [level=2] [ref=e295]
+        - generic [ref=e296]:
+          - group [ref=e297]:
+            - generic "How are providers selected?" [ref=e298] [cursor=pointer]
+          - group [ref=e299]:
+            - generic "Are all providers licensed?" [ref=e300] [cursor=pointer]
+          - group [ref=e301]:
+            - generic "Can I request a particular provider?" [ref=e302] [cursor=pointer]
+          - group [ref=e303]:
+            - generic "Is mobile massage available?" [ref=e304] [cursor=pointer]
+          - group [ref=e305]:
+            - generic "How is final pricing determined?" [ref=e306] [cursor=pointer]
+          - group [ref=e307]:
+            - generic "What if I am not sure which service to choose?" [ref=e308] [cursor=pointer]
+          - group [ref=e309]:
+            - generic "Is this medical treatment?" [ref=e310] [cursor=pointer]
+          - group [ref=e311]:
+            - generic "What should I disclose before an appointment?" [ref=e312] [cursor=pointer]
+      - generic [ref=e314]:
+        - generic [ref=e315]:
+          - paragraph [ref=e316]: Ready when the visitor is
+          - heading "Let’s find the right session for you." [level=2] [ref=e320]
+        - link "Start matching" [ref=e321] [cursor=pointer]:
+          - /url: /match
+    - contentinfo [ref=e323]:
+      - generic [ref=e324]:
+        - generic [ref=e325]:
+          - paragraph [ref=e326]: Miami Bodywork Network
+          - paragraph [ref=e327]: Services are performed by participating independent licensed practitioners. Provider availability, pricing and service areas may vary.
+        - generic [ref=e328]:
+          - paragraph [ref=e329]: Explore
+          - generic [ref=e330]:
+            - link "Services" [ref=e331] [cursor=pointer]:
+              - /url: /services
+            - link "Find My Treatment" [ref=e332] [cursor=pointer]:
+              - /url: /match
+            - link "How It Works" [ref=e333] [cursor=pointer]:
+              - /url: /how-it-works
+            - link "Service Areas" [ref=e334] [cursor=pointer]:
+              - /url: /locations/pinecrest
+            - link "About the Network" [ref=e335] [cursor=pointer]:
+              - /url: /provider-disclosure
+        - generic [ref=e336]:
+          - paragraph [ref=e337]: Details
+          - generic [ref=e338]:
+            - link "Privacy" [ref=e339] [cursor=pointer]:
+              - /url: /privacy
+            - link "Terms" [ref=e340] [cursor=pointer]:
+              - /url: /terms
+            - link "Provider Disclosure" [ref=e341] [cursor=pointer]:
+              - /url: /provider-disclosure
+            - link "Contact" [ref=e342] [cursor=pointer]:
+              - /url: /contact
+  - alert [ref=e343]

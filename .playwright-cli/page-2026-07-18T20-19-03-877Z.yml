@@ -1,0 +1,83 @@
+- generic [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: Miami, FL service area
+        - link "(305) 555-0147" [ref=e7] [cursor=pointer]:
+          - /url: tel:(305) 555-0147
+      - navigation "Main navigation" [ref=e10]:
+        - link "Miami Bodywork Network" [ref=e11] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e12]:
+          - link "Services" [ref=e13] [cursor=pointer]:
+            - /url: /services
+          - link "Find My Treatment" [ref=e14] [cursor=pointer]:
+            - /url: /match
+          - link "How It Works" [ref=e15] [cursor=pointer]:
+            - /url: /how-it-works
+          - link "Service Areas" [ref=e16] [cursor=pointer]:
+            - /url: /locations/pinecrest
+          - link "About the Network" [ref=e17] [cursor=pointer]:
+            - /url: /provider-disclosure
+          - link "Book Now" [ref=e18] [cursor=pointer]:
+            - /url: /match
+    - main [ref=e20]:
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - paragraph [ref=e23]: Guided matching
+          - heading "Help us route the right kind of request." [level=2] [ref=e24]
+          - paragraph [ref=e25]: This form keeps your answers while you move through each step and shows recommendations before submission.
+        - generic [ref=e26]:
+          - generic [ref=e28]:
+            - generic [ref=e29]: Step 2 of 6
+            - generic [ref=e30]: 33%
+          - region [ref=e92]:
+            - heading "Body areas" [level=2] [ref=e93]
+            - generic [ref=e95]:
+              - button "Head / jaw" [ref=e96]
+              - button "Neck" [ref=e97]
+              - button "Shoulders" [ref=e98]
+              - button "Upper back" [ref=e99]
+              - button "Lower back" [ref=e100]
+              - button "Arms / elbows" [ref=e101]
+              - button "Hands / wrists" [ref=e102]
+              - button "Hips" [ref=e103]
+              - button "Legs" [ref=e104]
+              - button "Knees" [ref=e105]
+              - button "Feet / ankles" [ref=e106]
+              - button "Full body" [ref=e107]
+              - button "Other" [ref=e108]
+          - generic [ref=e53]:
+            - button [ref=e54]
+            - button [active] [ref=e58]
+    - contentinfo [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]:
+          - paragraph [ref=e65]: Miami Bodywork Network
+          - paragraph [ref=e66]: Services are performed by participating independent licensed practitioners. Provider availability, pricing and service areas may vary.
+        - generic [ref=e67]:
+          - paragraph [ref=e68]: Explore
+          - generic [ref=e69]:
+            - link "Services" [ref=e70] [cursor=pointer]:
+              - /url: /services
+            - link "Find My Treatment" [ref=e71] [cursor=pointer]:
+              - /url: /match
+            - link "How It Works" [ref=e72] [cursor=pointer]:
+              - /url: /how-it-works
+            - link "Service Areas" [ref=e73] [cursor=pointer]:
+              - /url: /locations/pinecrest
+            - link "About the Network" [ref=e74] [cursor=pointer]:
+              - /url: /provider-disclosure
+        - generic [ref=e75]:
+          - paragraph [ref=e76]: Details
+          - generic [ref=e77]:
+            - link "Privacy" [ref=e78] [cursor=pointer]:
+              - /url: /privacy
+            - link "Terms" [ref=e79] [cursor=pointer]:
+              - /url: /terms
+            - link "Provider Disclosure" [ref=e80] [cursor=pointer]:
+              - /url: /provider-disclosure
+            - link "Contact" [ref=e81] [cursor=pointer]:
+              - /url: /contact
+  - button "Open Next.js Dev Tools" [ref=e87] [cursor=pointer]
+  - alert [ref=e91]
