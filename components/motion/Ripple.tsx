@@ -23,7 +23,7 @@ export function useRipple() {
     setRipples((current) => [...current, nextRipple]);
     window.setTimeout(() => {
       setRipples((current) => current.filter((ripple) => ripple.id !== nextRipple.id));
-    }, 920);
+    }, 1480);
   }
 
   return { ripples, createRipple };
@@ -35,7 +35,7 @@ export function RippleLayer({ ripples }: { ripples: Ripple[] }) {
       {ripples.map((ripple) => (
         <span
           key={ripple.id}
-          className="ripple-dot absolute h-7 w-7 rounded-full"
+          className="ripple-dot absolute h-10 w-10 rounded-full"
           style={{ left: ripple.x, top: ripple.y }}
         />
       ))}
