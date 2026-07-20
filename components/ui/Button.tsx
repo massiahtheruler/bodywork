@@ -6,9 +6,9 @@ import { cn } from "@/lib/utilities/cn";
 import { RippleLayer, useRipple } from "@/components/motion/Ripple";
 
 const variants = {
-  primary: "bg-charcoal-olive text-bone hover:-translate-y-0.5 hover:bg-[#1f231e]",
-  secondary: "border border-charcoal-olive/25 bg-bone/60 text-charcoal-olive hover:-translate-y-0.5 hover:border-charcoal-olive/50",
-  ghost: "text-charcoal-olive hover:bg-charcoal-olive/5",
+  primary: "bg-leaf text-bone shadow-lg shadow-leaf/18 hover:-translate-y-0.5 hover:bg-tide hover:shadow-water/35",
+  secondary: "border border-tide/35 bg-mist/72 text-charcoal-olive shadow-sm shadow-water/20 hover:-translate-y-0.5 hover:border-leaf/45 hover:bg-water/35",
+  ghost: "text-leaf hover:bg-water/18 hover:text-charcoal-olive",
 };
 
 type BaseProps = {
@@ -29,7 +29,7 @@ export function ButtonLink({
     <Link
       {...props}
       className={cn(
-        "relative inline-flex min-h-11 items-center justify-center overflow-hidden rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-candle",
+        "relative inline-flex min-h-11 items-center justify-center overflow-hidden rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide",
         variants[variant],
         className,
       )}
@@ -56,7 +56,7 @@ export function Button({
     <button
       {...props}
       className={cn(
-        "relative inline-flex min-h-11 items-center justify-center overflow-hidden rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-candle disabled:cursor-not-allowed disabled:opacity-55",
+        "relative inline-flex min-h-11 items-center justify-center overflow-hidden rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide disabled:cursor-not-allowed disabled:opacity-55",
         variants[variant],
         className,
       )}

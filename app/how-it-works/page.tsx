@@ -26,19 +26,19 @@ export default function HowItWorksPage() {
         />
         <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {steps.map(([title, copy], index) => (
-            <article key={title} className="rounded-md border border-charcoal-olive/10 bg-bone/72 p-5">
-              <p className="text-sm font-bold text-clay">0{index + 1}</p>
-              <h2 className="mt-4 font-serif text-3xl text-charcoal-olive">{title}</h2>
+            <article key={title} className="rounded-md border border-tide/16 bg-mist/44 p-5 shadow-sm shadow-water/12">
+              <p className="text-sm font-bold text-tide">0{index + 1}</p>
+              <h2 className="mt-4 font-serif text-3xl text-leaf">{title}</h2>
               <p className="mt-3 text-sm leading-7 text-charcoal-olive/72">{copy}</p>
             </article>
           ))}
         </div>
-        <div className="mt-12 rounded-md bg-charcoal-olive p-6 text-bone md:p-8">
+        <div className="mt-12 rounded-md bg-leaf p-6 text-bone md:p-8">
           <h2 className="font-serif text-4xl">Independent provider disclosure</h2>
           <p className="mt-4 max-w-4xl text-base leading-8 text-bone/78">
             Our network of independent licensed providers performs services according to their own availability, service areas and professional scope. The customer experience stays simple while provider routing remains editable in one backend module.
           </p>
-          <ButtonLink href="/match" className="mt-6 bg-bone text-charcoal-olive hover:bg-limestone">
+          <ButtonLink href="/match" variant="secondary" className="mt-6">
             Start a request
           </ButtonLink>
         </div>

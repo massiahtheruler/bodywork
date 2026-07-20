@@ -19,14 +19,14 @@ export default function ContactPage() {
           title="Questions before submitting a request?"
           copy="Use the guided form for booking requests. Use contact for network questions, provider inquiries and general availability questions."
         />
-        <div className="rounded-md border border-charcoal-olive/10 bg-bone/72 p-6">
+        <div className="rounded-md border border-tide/16 bg-mist/44 p-6 shadow-sm shadow-water/12">
           <div className="grid gap-4">
-            <a href={`tel:${brand.phone}`} className="flex items-center gap-3 rounded-md border border-charcoal-olive/10 p-4 hover:bg-limestone/35">
-              <Phone aria-hidden="true" size={20} />
+            <a href={`tel:${brand.phone}`} className="flex items-center gap-3 rounded-md border border-tide/16 bg-bone/48 p-4 text-charcoal-olive hover:bg-water/24 hover:text-leaf">
+              <Phone aria-hidden="true" className="text-tide" size={20} />
               {brand.phone}
             </a>
-            <a href={`mailto:${brand.email}`} className="flex items-center gap-3 rounded-md border border-charcoal-olive/10 p-4 hover:bg-limestone/35">
-              <Mail aria-hidden="true" size={20} />
+            <a href={`mailto:${brand.email}`} className="flex items-center gap-3 rounded-md border border-tide/16 bg-bone/48 p-4 text-charcoal-olive hover:bg-water/24 hover:text-leaf">
+              <Mail aria-hidden="true" className="text-tide" size={20} />
               {brand.email}
             </a>
           </div>

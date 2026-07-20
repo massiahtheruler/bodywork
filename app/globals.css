@@ -6,7 +6,12 @@
   --sand: #c9b79f;
   --clay: #a77f66;
   --sage: #7c816e;
-  --charcoal-olive: #292d27;
+  --foliage: #9fb79f;
+  --leaf: #5f7f6b;
+  --water: #b9d8dc;
+  --tide: #6f9ca5;
+  --mist: #e9f3f1;
+  --charcoal-olive: #2f3a33;
   --candle: #d89a55;
   --background: var(--bone);
   --foreground: var(--charcoal-olive);
@@ -20,25 +25,37 @@
   --color-sand: var(--sand);
   --color-clay: var(--clay);
   --color-sage: var(--sage);
+  --color-foliage: var(--foliage);
+  --color-leaf: var(--leaf);
+  --color-water: var(--water);
+  --color-tide: var(--tide);
+  --color-mist: var(--mist);
   --color-charcoal-olive: var(--charcoal-olive);
   --color-candle: var(--candle);
-  --font-sans: "Inter", "Inter Fallback", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Cormorant Garamond", "Cormorant Garamond Fallback", Georgia, serif;
+  --font-sans: "Manrope", "Manrope Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Alex Brush", "Alex Brush Fallback", cursive;
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at 14% 8%, rgba(185, 216, 220, 0.22), transparent 28%),
+    radial-gradient(circle at 82% 16%, rgba(159, 183, 159, 0.18), transparent 24%),
+    var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
 }
 
 .font-serif {
-  font-family: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  font-family: var(--font-alex-brush), "Alex Brush", cursive;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  text-shadow: 0 0 0 currentColor;
 }
 
 .field {
-  background: rgba(244, 239, 230, 0.74);
-  border: 1px solid rgba(41, 45, 39, 0.18);
+  background: rgba(244, 239, 230, 0.78);
+  border: 1px solid rgba(95, 127, 107, 0.24);
   border-radius: 0.375rem;
   color: var(--charcoal-olive);
   min-height: 2.75rem;
@@ -47,8 +64,8 @@ body {
 }
 
 .field:focus {
-  border-color: var(--candle);
-  outline: 2px solid rgba(216, 154, 85, 0.35);
+  border-color: var(--tide);
+  outline: 2px solid rgba(185, 216, 220, 0.55);
   outline-offset: 2px;
 }
 
@@ -57,7 +74,7 @@ html {
 }
 
 ::selection {
-  background: rgba(216, 154, 85, 0.35);
+  background: rgba(185, 216, 220, 0.58);
 }
 
 .paper-texture {
@@ -66,8 +83,8 @@ html {
 
 .paper-texture::before {
   background-image:
-    radial-gradient(circle at 1px 1px, rgba(41, 45, 39, 0.08) 1px, transparent 0),
-    linear-gradient(120deg, rgba(255, 255, 255, 0.22), transparent 45%, rgba(41, 45, 39, 0.03));
+    radial-gradient(circle at 1px 1px, rgba(47, 58, 51, 0.06) 1px, transparent 0),
+    linear-gradient(120deg, rgba(255, 255, 255, 0.22), transparent 45%, rgba(111, 156, 165, 0.05));
   background-size: 18px 18px, 100% 100%;
   content: "";
   inset: 0;
@@ -82,8 +99,45 @@ html {
   transform: translate(-50%, -50%);
 }
 
+.cursor-halo {
+  opacity: 0.42;
+  transform: translate(-50%, -50%);
+  transition: left 520ms ease-out, top 520ms ease-out;
+}
+
+.float-layer {
+  will-change: transform;
+}
+
+.lift-surface {
+  backface-visibility: hidden;
+  perspective: 900px;
+  position: relative;
+  transform-origin: center;
+  will-change: transform, box-shadow;
+}
+
+.lift-surface::after {
+  background: radial-gradient(circle at var(--lift-x, 50%) var(--lift-y, 50%), rgba(255, 255, 255, 0.14), transparent 38%);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transition: opacity 420ms ease;
+}
+
+.lift-surface:hover::after {
+  opacity: 1;
+}
+
 .ripple-dot {
-  animation: ripple 560ms ease-out forwards;
+  animation: ripple 920ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  background:
+    radial-gradient(circle, rgba(233, 243, 241, 0.54) 0%, rgba(185, 216, 220, 0.3) 42%, rgba(244, 239, 230, 0) 70%);
+  filter: blur(0.5px);
+  opacity: 0.86;
   transform: translate(-50%, -50%) scale(0);
 }
 
@@ -113,9 +167,16 @@ html {
 }
 
 @keyframes ripple {
+  0% {
+    opacity: 0.72;
+    transform: translate(-50%, -50%) scale(0.15);
+  }
+  45% {
+    opacity: 0.36;
+  }
   to {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(18);
+    transform: translate(-50%, -50%) scale(15);
   }
 }
 
@@ -154,6 +215,10 @@ html {
   }
 
   .hero-media::after {
+    display: none;
+  }
+
+  .cursor-halo {
     display: none;
   }
 }

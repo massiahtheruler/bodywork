@@ -31,7 +31,7 @@ export default function ServicesPage() {
 function ServiceGroup({ title, services: groupServices }: { title: string; services: typeof services }) {
   return (
     <section className="mt-12" aria-labelledby={title.toLowerCase().replace(/\s+/g, "-")}>
-      <h2 id={title.toLowerCase().replace(/\s+/g, "-")} className="font-serif text-4xl text-charcoal-olive">{title}</h2>
+      <h2 id={title.toLowerCase().replace(/\s+/g, "-")} className="font-serif text-4xl text-leaf">{title}</h2>
       <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {groupServices.map((service) => <ServiceCard key={service.id} service={service} />)}
       </div>

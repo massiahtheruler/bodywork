@@ -11,9 +11,10 @@ export const metadata: Metadata = {
 export default async function MatchPage({
   searchParams,
 }: {
-  searchParams: Promise<{ concern?: string; service?: string }>;
+  searchParams: Promise<{ concern?: string; service?: string; bodyArea?: string | string[] }>;
 }) {
   const params = await searchParams;
+  const bodyAreas = Array.isArray(params.bodyArea) ? params.bodyArea : params.bodyArea ? [params.bodyArea] : [];
 
   return (
     <main className="px-4 py-14 sm:px-6 lg:px-8">
@@ -23,7 +24,7 @@ export default async function MatchPage({
           title="Help us route the right kind of request."
           copy="This form keeps your answers while you move through each step and shows recommendations before submission."
         />
-        <MatchingForm initialConcern={params.concern} initialService={params.service} />
+        <MatchingForm initialConcern={params.concern} initialService={params.service} initialBodyAreas={bodyAreas} />
       </div>
     </main>
   );

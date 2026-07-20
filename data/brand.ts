@@ -15,7 +15,12 @@ export const brand = {
     sand: "#C9B79F",
     clay: "#A77F66",
     sage: "#7C816E",
-    charcoalOlive: "#292D27",
+    foliage: "#9FB79F",
+    leaf: "#5F7F6B",
+    water: "#B9D8DC",
+    tide: "#6F9CA5",
+    mist: "#E9F3F1",
+    charcoalOlive: "#2F3A33",
     candle: "#D89A55",
   },
 } as const;

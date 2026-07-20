@@ -1,19 +1,20 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Alex_Brush, Manrope } from "next/font/google";
 import { brand } from "@/data/brand";
 import { AmbientGlow } from "@/components/motion/AmbientGlow";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
 });
 
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
+const alexBrush = Alex_Brush({
+  variable: "--font-alex-brush",
+  weight: "400",
   subsets: ["latin"],
   display: "swap",
 });
@@ -48,7 +49,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${cormorant.variable} h-full antialiased`}
+      className={`${manrope.variable} ${alexBrush.variable} h-full antialiased`}
     >
       <body className="paper-texture min-h-full">
         <AmbientGlow />

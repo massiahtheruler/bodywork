@@ -27,6 +27,10 @@ const locationTypes = [
 ] as const;
 
 const suitabilityOptions = ["Currently pregnant", "Recent surgery or cosmetic procedure", "Current injury", "Receiving medical treatment for this concern", "None of these"] as const;
+const exclusiveMultiSelectOptions: Partial<Record<"concerns" | "bodyAreas" | "preferredApproaches" | "suitabilityFlags" | "selectedServices", string>> = {
+  preferredApproaches: "Recommend an approach",
+  suitabilityFlags: "None of these",
+};
 
 const defaultValues: LeadFormValues = {
   selectedServices: [],
@@ -53,6 +57,7 @@ const defaultValues: LeadFormValues = {
 };
 
 type MatchingFormProps = {
+  initialBodyAreas?: string[];
   initialConcern?: string;
   initialService?: string;
 };
@@ -63,14 +68,16 @@ type SubmissionState =
   | { status: "error"; message: string }
   | { status: "success"; recommendations: Recommendation[]; values: LeadFormValues };
 
-export function MatchingForm({ initialConcern, initialService }: MatchingFormProps) {
-  const [step, setStep] = useState(0);
+export function MatchingForm({ initialBodyAreas = [], initialConcern, initialService }: MatchingFormProps) {
+  const hasHomePrimerAnswers = Boolean(initialConcern) && initialBodyAreas.length > 0;
+  const [step, setStep] = useState(hasHomePrimerAnswers ? 2 : 0);
   const [submission, setSubmission] = useState<SubmissionState>({ status: "idle" });
   const form = useForm<LeadFormValues>({
     resolver: zodResolver(leadSchema),
     mode: "onBlur",
     defaultValues: {
       ...defaultValues,
+      bodyAreas: initialBodyAreas,
       concerns: initialConcern ? [initialConcern] : [],
       selectedServices: initialService ? [initialService] : [],
     },
@@ -91,8 +98,16 @@ export function MatchingForm({ initialConcern, initialService }: MatchingFormPro
 
   function toggleArray(field: "concerns" | "bodyAreas" | "preferredApproaches" | "suitabilityFlags" | "selectedServices", value: string) {
     const current = form.getValues(field);
+    const exclusiveOption = exclusiveMultiSelectOptions[field];
     const next = current.includes(value) ? current.filter((item) => item !== value) : [...current, value];
-    form.setValue(field, field === "suitabilityFlags" && value !== "None of these" ? next.filter((item) => item !== "None of these") : next, {
+    const normalizedNext =
+      exclusiveOption && value === exclusiveOption && !current.includes(value)
+        ? [exclusiveOption]
+        : exclusiveOption
+          ? next.filter((item) => item !== exclusiveOption)
+          : next;
+
+    form.setValue(field, normalizedNext, {
       shouldDirty: true,
       shouldValidate: true,
     });
@@ -124,16 +139,17 @@ export function MatchingForm({ initialConcern, initialService }: MatchingFormPro
 
   const errors = form.formState.errors;
   const progress = Math.round(((step + 1) / 6) * 100);
+  const firstEditableStep = hasHomePrimerAnswers ? 2 : 0;
 
   return (
-    <form onSubmit={form.handleSubmit(handleSubmit)} className="rounded-md border border-charcoal-olive/10 bg-bone/78 p-4 shadow-xl shadow-charcoal-olive/8 sm:p-6">
+    <form onSubmit={form.handleSubmit(handleSubmit)} className="rounded-md border border-tide/16 bg-bone/80 p-4 shadow-xl shadow-water/18 sm:p-6">
       <div className="mb-7">
         <div className="flex items-center justify-between text-sm font-semibold text-charcoal-olive/70">
           <span>Step {step + 1} of 6</span>
           <span>{progress}%</span>
         </div>
-        <div className="mt-3 h-2 overflow-hidden rounded-full bg-limestone">
-          <div className="h-full rounded-full bg-candle transition-all" style={{ width: `${progress}%` }} />
+        <div className="mt-3 h-2 overflow-hidden rounded-full bg-water/34">
+          <div className="h-full rounded-full bg-tide transition-all" style={{ width: `${progress}%` }} />
         </div>
       </div>
 
@@ -216,7 +232,7 @@ export function MatchingForm({ initialConcern, initialService }: MatchingFormPro
 
       {step === 5 ? (
         <Step title="Contact">
-          <p className="mb-5 rounded-md bg-limestone/55 p-4 text-sm leading-7 text-charcoal-olive/76">
+          <p className="mb-5 rounded-md bg-water/22 p-4 text-sm leading-7 text-charcoal-olive/76">
             Your answers help us recommend a suitable provider and service. They do not constitute medical advice or a diagnosis.
           </p>
           <div className="grid gap-4 md:grid-cols-2">
@@ -233,7 +249,7 @@ export function MatchingForm({ initialConcern, initialService }: MatchingFormPro
             </Field>
           </div>
           <label className="mt-5 flex items-start gap-3 text-sm leading-6 text-charcoal-olive/76">
-            <input {...form.register("consent")} type="checkbox" className="mt-1 h-4 w-4 accent-charcoal-olive" />
+            <input {...form.register("consent")} type="checkbox" className="mt-1 h-4 w-4 accent-tide" />
             I agree to be contacted about this booking request and understand that provider availability, pricing and service areas may vary.
           </label>
           {errors.consent?.message ? <p className="mt-2 text-sm font-semibold text-red-700">{errors.consent.message}</p> : null}
@@ -243,7 +259,7 @@ export function MatchingForm({ initialConcern, initialService }: MatchingFormPro
       {submission.status === "error" ? <p className="mt-5 rounded-md bg-red-50 p-3 text-sm font-semibold text-red-700">{submission.message}</p> : null}
 
       <div className="mt-8 flex flex-col-reverse justify-between gap-3 sm:flex-row">
-        <Button type="button" variant="secondary" onClick={() => setStep((current) => Math.max(0, current - 1))} disabled={step === 0}>
+        <Button type="button" variant="secondary" onClick={() => setStep((current) => Math.max(firstEditableStep, current - 1))} disabled={step === firstEditableStep}>
           <ArrowLeft aria-hidden="true" size={16} /> Back
         </Button>
         {step < 5 ? (
@@ -263,7 +279,7 @@ export function MatchingForm({ initialConcern, initialService }: MatchingFormPro
 function Step({ title, error, children }: { title: string; error?: string; children: React.ReactNode }) {
   return (
     <section aria-labelledby={title.toLowerCase().replace(/\s+/g, "-")}>
-      <h2 id={title.toLowerCase().replace(/\s+/g, "-")} className="font-serif text-3xl text-charcoal-olive">{title}</h2>
+      <h2 id={title.toLowerCase().replace(/\s+/g, "-")} className="font-serif text-3xl text-leaf">{title}</h2>
       {error ? <p className="mt-2 text-sm font-semibold text-red-700">{error}</p> : null}
       <div className="mt-5">{children}</div>
     </section>
@@ -281,7 +297,7 @@ function Option({ selected, onClick, children }: { selected: boolean; onClick: (
 function Field({ label, error, children, className }: { label: string; error?: string; children: React.ReactNode; className?: string }) {
   return (
     <label className={className}>
-      <span className="mb-2 block text-sm font-semibold text-charcoal-olive">{label}</span>
+      <span className="mb-2 block text-sm font-semibold text-leaf">{label}</span>
       {children}
       {error ? <span className="mt-2 block text-sm font-semibold text-red-700">{error}</span> : null}
     </label>
@@ -292,8 +308,8 @@ function RecommendationPreview({ recommendations }: { recommendations: Recommend
   if (recommendations.length === 0) return null;
 
   return (
-    <div className="mt-6 rounded-md border border-charcoal-olive/10 bg-limestone/45 p-4">
-      <p className="text-sm font-bold text-charcoal-olive">Current recommendations</p>
+    <div className="mt-6 rounded-md border border-tide/16 bg-water/18 p-4">
+      <p className="text-sm font-bold text-leaf">Current recommendations</p>
       <div className="mt-3 grid gap-3">
         {recommendations.map((recommendation) => (
           <div key={recommendation.serviceId} className="text-sm leading-6 text-charcoal-olive/76">
@@ -312,9 +328,9 @@ function SuccessState({ values, recommendations, onEdit }: { values: LeadFormVal
     .filter((title): title is string => Boolean(title));
 
   return (
-    <div className="rounded-md border border-charcoal-olive/10 bg-bone/78 p-6 shadow-xl shadow-charcoal-olive/8">
-      <CheckCircle2 aria-hidden="true" className="text-sage" size={34} />
-      <h2 className="mt-4 font-serif text-4xl text-charcoal-olive">Your request has been received.</h2>
+    <div className="rounded-md border border-tide/16 bg-bone/80 p-6 shadow-xl shadow-water/18">
+      <CheckCircle2 aria-hidden="true" className="text-tide" size={34} />
+      <h2 className="mt-4 font-serif text-4xl text-leaf">Your request has been received.</h2>
       <p className="mt-4 text-base leading-8 text-charcoal-olive/76">
         We’re reviewing your treatment preferences and provider availability. You’ll receive the next booking step shortly.
       </p>
@@ -324,7 +340,7 @@ function SuccessState({ values, recommendations, onEdit }: { values: LeadFormVal
         <Summary title="Selected services" items={selectedNames.length ? selectedNames : ["No direct service selected"]} />
         <Summary title="Requested schedule" items={[`${values.duration} minutes`, values.preferredDate, values.timeWindow, values.zipCode]} />
       </div>
-      <p className="mt-6 rounded-md bg-limestone/55 p-4 text-sm leading-7 text-charcoal-olive/76">
+      <p className="mt-6 rounded-md bg-water/22 p-4 text-sm leading-7 text-charcoal-olive/76">
         Contact expectation: we will use your preferred contact method first, then follow up by email or phone if needed.
       </p>
       <Button type="button" variant="secondary" className="mt-6" onClick={onEdit}>
@@ -336,8 +352,8 @@ function SuccessState({ values, recommendations, onEdit }: { values: LeadFormVal
 
 function Summary({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="rounded-md border border-charcoal-olive/10 bg-bone/75 p-4">
-      <p className="text-sm font-bold text-charcoal-olive">{title}</p>
+    <div className="rounded-md border border-tide/16 bg-mist/44 p-4">
+      <p className="text-sm font-bold text-leaf">{title}</p>
       <ul className="mt-3 grid gap-1 text-sm leading-6 text-charcoal-olive/72">
         {items.map((item) => <li key={item}>{item}</li>)}
       </ul>
